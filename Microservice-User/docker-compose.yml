@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+    - 4444:4444
+    command: --smallfiles
+  microservice-user:
+    image: microservice-user:v1
+    ports:
+    - 5555:5555
+    links:
+    - mongo
