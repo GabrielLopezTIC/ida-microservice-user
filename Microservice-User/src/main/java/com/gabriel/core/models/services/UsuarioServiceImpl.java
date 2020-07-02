@@ -1,7 +1,7 @@
 package com.gabriel.core.models.services;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,12 +28,18 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	
 	@Override
 	public Usuario save(Usuario usuario) {
-	        List<Rol> roles = Arrays.asList(rolRepo.findByRol("ROLE_USER")/*,rolRepo.findByRol("ROLE_ADMIN")*/);
-	        usuario.setRoles(roles);
-		usuario.setFechaCreado(LocalDateTime.now());
-		usuario.setEnabled(true);
-		usuario.setPassword(encode.encode(usuario.getPassword()));
-		return usuarioRepo.save(usuario);
+	    List<Rol> rolesTemp = usuario.getRoles();
+	    List<Rol> roles = new ArrayList<Rol>();
+	    for(Rol ite: rolesTemp) {
+		roles.add(rolRepo.findByRol(ite.getRol()));
+	    }
+	    
+	    usuario.setRoles(roles);
+	    usuario.setFechaCreado(LocalDateTime.now());
+	    usuario.setEnabled(true);
+	    usuario.setPassword(encode.encode(usuario.getPassword()));
+	    
+	    return usuarioRepo.save(usuario);
 	}
 
 	

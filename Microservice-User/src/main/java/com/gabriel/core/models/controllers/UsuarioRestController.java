@@ -63,6 +63,7 @@ public class UsuarioRestController {
 	public List<Usuario> findAll() {
 		return usuarioService.findAll();
 	}
+	
 	@ApiOperation(value = "Editar usuario",
 		    notes = "Permite modificar un usuario")
 	//@CrossOrigin(origins = "*")
