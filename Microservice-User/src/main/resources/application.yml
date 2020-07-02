@@ -1,12 +1,14 @@
 spring:
   data:
     mongodb:
+     uri: mongodb+srv://gabriel:gabriel@tsis.wxitp.mongodb.net/gabriel?retryWrites=true&w=majority
+     database: ida-database
      #host: database-mongo
      #port: 27017 
      #uri: mongodb://database-mongo/IDA-Users-db
-      host: 127.0.0.2 #
-      port: 1111       #
-      uri: mongodb://127.0.0.2:1111/IDA-Users-db
+      ##host: 127.0.0.2 #
+      ##port: 1111       #
+      ##uri: mongodb://127.0.0.2:1111/IDA-Users-db
       #
   application:
     name: MS-Usuarios 

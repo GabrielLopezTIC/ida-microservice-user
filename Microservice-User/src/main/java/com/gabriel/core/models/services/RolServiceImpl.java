@@ -17,7 +17,12 @@ public class RolServiceImpl implements IRolService{
 	
 	@Override
 	public <S extends Rol> S save(S entity) {
+	    Rol rol = rolRepo.findByRol(entity.getRol());
+	    if(rol == null)
 		return rolRepo.save(entity);
+	    else {
+		return null;
+	    }
 	}
 
 	@Override
