@@ -42,18 +42,18 @@ public class UsuarioRestController {
 	//@CrossOrigin(origins = "*")
 	@GetMapping(path = "/find/usr/{email}")
 	public Optional<Usuario> findByEmail(@PathVariable String email) {
-	    System.out.println("Lego aqui");
+	     System.out.println("Realizada busqueda de usuario");
 		return usuarioService.findUserByEmail(email);	
 	}
 	
-	 
+	/** 
 	@ApiOperation(value = "Buscar usuario por id ",
 		    notes = "Permite buscar un usuario a travez de su id")
 	//@CrossOrigin(origins = "*")
 	@GetMapping(path = "/find/id/{id}")
 	public Optional<Usuario> findById(@PathVariable String id) {
 		return usuarioService.findUserById(id);
-	}
+	}**/
 	
 	
 	@ApiOperation(value = "Buscar todos los usuarios",

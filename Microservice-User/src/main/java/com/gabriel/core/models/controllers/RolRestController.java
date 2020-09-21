@@ -47,12 +47,12 @@ public class RolRestController {
 	
 
 	//delete
-	@ApiOperation(value = "Eliminar Rol",
+	/*@ApiOperation(value = "Eliminar Rol",
 		    notes = "Permite eliminar un rol por su id")
 	@DeleteMapping(path = "/delete/{id}")
 	public void deleteById(@PathVariable String id) {
 		rolService.deleteById(id);
-	}
+	}**/
 
 	/**
 	 * Delete all
